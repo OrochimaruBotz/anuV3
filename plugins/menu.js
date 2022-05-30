@@ -31,12 +31,16 @@ const defaultMenu = {
 │⬡ *Memory Used* : ${ramDipake}MB / ${totalram}MB
 │⬡ *Instagram* :
 │⬡ https://instagram.com/mursid.st
+│
+│⬡ 𝘛𝘜𝘛𝘖𝘙𝘐𝘈𝘓 𝘉𝘐𝘒𝘐𝘕 𝘉𝘖𝘛 𝘊𝘏𝘈𝘛 𝘖𝘞𝘕𝘌𝘙 
+│⬡ 𝘊𝘏𝘈𝘛 𝘗 𝘛𝘐𝘋𝘈𝘒 𝘈𝘒𝘈𝘕 𝘋𝘐 𝘙𝘌𝘚𝘗𝘖𝘕 
+│⬡ 𝘋𝘖𝘕𝘈𝘚𝘐 𝘒𝘈𝘒 𝘚𝘌𝘐𝘒𝘏𝘓𝘈𝘚𝘕𝘠𝘈 
 ┗───────────⬣`.trimStart(),
     header: '┏──『 %category 』──⬣',
     body: '│⬡%cmd %islimit %isPremium',
     footer: '┗──────⬣\n',
    footerText: '© 𝙈𝙎 𝘽𝙊𝙏',
-    after: `
+    after: `\n❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙❘❙❙❚❙❘❙❙❘❙❚❙❘
 %npmname@^%version
 ${'%npmdesc'}
 `,
@@ -183,7 +187,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
         let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
         let names = m.fromMe ? conn.user : conn.contacts[who]
         let pushname = `${names.vnmae || names.notify || names.names || ('+' + names.jid.split`@`[0])}`
-        let pushn = 'daftar dulu ya'
+        let pushn = 'daftar dulu ya kak, supaya namanya muncul disini'
         let name = registered ? global.db.data.users[m.sender].name : pushn
         let d = new Date(new Date + 3600000)
         let locale = 'id'
@@ -245,8 +249,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 │⬡ Terblock : ${conn.blocklist.length} 
 │⬡ Chat Terbanned : ${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}
 │⬡ Pengguna Terbanned : ${Object.entries(global.db.data.users).filter(user => user[1].banned).length}
-┗──────────⬣
-┏──『 𝘽𝙤𝙩 𝙄𝙣𝙛𝙤 』──⬣
 │⬡ Version :  ${conn.browserDescription[2]}
 │⬡ Browser : ${conn.browserDescription[1]}
 │⬡ Host Number : @${global.conn.user.jid.split('@')[0]}
