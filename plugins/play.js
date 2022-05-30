@@ -27,13 +27,11 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   if (yt2 === false) throw 'semua server gagal'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
   await conn.send2ButtonLoc(m.chat, await (await fetch(thumb)).buffer(), `
-╭──── 〔 Y O U T U B E 〕 ─⬣
-⬣*Judul:* ${title}
-⬣*Ukuran File Audio:* ${filesizeF}
-⬣*Ukuran File Video:* ${yt2.filesizeF}
-⬣*Server y2mate:* ${usedServer}
-╰────────⬣
-`.trim(), footer, 'Audio', `.yta ${vid.url}`, 'Video', `.yt ${vid.url}`, m)
+⬣ *Judul:* ${title}
+⬣ *Ukuran File Audio:* ${filesizeF}
+⬣ *Ukuran File Video:* ${yt2.filesizeF}
+⬣ *Server y2mate:* ${usedServer}
+`.trim(), footer, 'Audio🎧', `.yta ${vid.url}`, 'Video📽️', `.yt ${vid.url}`, m)
 }
 handler.help = ['play'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader']
