@@ -1,2 +1,1 @@
-worker: node . --autoread
- 
+worker: node . --server "session.data.json"
